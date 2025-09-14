@@ -4,30 +4,31 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@apollo/react-hooks": "^4.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
+    "@apollo/client": "^3.8.0",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
     "clsx": "^1.1.1",
     "graphql": "^16.0.1",
     "graphql-tag": "^2.12.6",
-    "install": "^0.13.0",
     "material-icons": "^1.10.4",
-    "npm": "^8.2.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-jss": "^10.8.2",
     "react-markdown": "^7.1.1",
     "react-router-dom": "^6.0.2",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^20.0.0",
+    "@vitejs/plugin-react": "^4.3.3",
     "typescript": "^4.5.2",
     "vite": "^5.4.11",
-    "vite-tsconfig-paths": "^5.1.2",
-    "web-vitals": "^1.0.1"
+    "vite-tsconfig-paths": "^5.1.2"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "browserslist": {
@@ -41,8 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/jest": "^26.0.15"
   }
 }
