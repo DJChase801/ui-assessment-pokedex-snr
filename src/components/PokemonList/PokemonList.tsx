@@ -1,6 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
+import { PokemonListCard } from './PokemonListCard/PokemonListCard';
 
 export const PokemonList = () => {
   const classes = useStyles();
@@ -10,7 +11,7 @@ export const PokemonList = () => {
     <div className={classes.root}>
       {loading && <div>Loading...</div>}
       {pokemons.map((pkmn) => (
-        <div key={pkmn.id}>{pkmn.name}</div>
+        <PokemonListCard key={pkmn.id} pokemon={pkmn} />
       ))}
     </div>
   );
