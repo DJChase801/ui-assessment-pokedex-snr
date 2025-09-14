@@ -2,15 +2,18 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import { PokemonListCard } from './PokemonListCard/PokemonListCard';
+import { SearchBox } from '../SearchBox/SearchBox';
 
 export const PokemonList = () => {
   const classes = useStyles();
   const { pokemons, loading } = useGetPokemons();
+  const [visiblePokemons, setVisiblePokemons] = React.useState(pokemons);
 
   return (
     <div className={classes.root}>
       {loading && <div>Loading...</div>}
-      {pokemons.map((pkmn) => (
+      <SearchBox allPokemons={pokemons} visiblePokemons={visiblePokemons} setVisiblePokemons={setVisiblePokemons} />
+      {visiblePokemons.map((pkmn) => (
         <PokemonListCard key={pkmn.id} pokemon={pkmn} />
       ))}
     </div>
