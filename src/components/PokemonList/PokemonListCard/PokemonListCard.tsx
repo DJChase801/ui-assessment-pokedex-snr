@@ -6,7 +6,7 @@ export const PokemonListCard: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => 
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onClick={() => window.location.href = `/pokemon/${pokemon.id}`}>
       <img src={pokemon.image} alt={pokemon.name} className={classes.image} />
       <div>
         <div className={classes.name}>{pokemon.name}</div>

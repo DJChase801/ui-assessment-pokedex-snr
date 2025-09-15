@@ -6,6 +6,7 @@ import { Nav } from '../components';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './client';
 import { ListPage, Home } from '../screens';
+import { DetailsModal } from '../components/DetailsModal/DetailsModal';
 
 function App() {
   const classes = useStyles();
@@ -20,6 +21,16 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/pokemon" element={<ListPage />} />
+                  <Route
+                    path="/pokemon/:id"
+                    element={
+                      <div>
+                        <DetailsModal
+                          id={window.location.pathname.split('/').pop() || ''}
+                        />
+                      </div>
+                    }
+                  />
                 </Routes>
               </div>
             </div>

@@ -13,9 +13,11 @@ export const PokemonList = () => {
     <div className={classes.root}>
       {loading && <div>Loading...</div>}
       <SearchBox allPokemons={pokemons} visiblePokemons={visiblePokemons} setVisiblePokemons={setVisiblePokemons} />
-      {visiblePokemons.map((pkmn) => (
-        <PokemonListCard key={pkmn.id} pokemon={pkmn} />
-      ))}
+      {pokemons && pokemons.map((pkmn) => {
+        if (visiblePokemons.find(vp => vp.id === pkmn.id) || visiblePokemons.length === 0) {
+          return <PokemonListCard key={pkmn.id} pokemon={pkmn} />;
+        }
+      })}
     </div>
   );
 };
