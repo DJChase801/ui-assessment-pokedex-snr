@@ -19,6 +19,13 @@ Thumbs.db
 dist/
 build/
 
+# Test coverage and artifacts
+coverage/
+package-lock.json
+__mocks__/
+jest.config.cjs
+jest.config.js
+
 # Vite cache
 .vite/
 

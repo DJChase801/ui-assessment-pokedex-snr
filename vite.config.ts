@@ -13,4 +13,12 @@ export default defineConfig({
     // this sets a default port to 3000
     port: 3000,
   },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/setupTests.ts'],
+    globals: true,
+    coverage: {
+      reporter: ['text', 'html'],
+    },
+  },
 });
