@@ -24,6 +24,7 @@ export const SearchBox: React.FC<{ allPokemons: Pokemon[], visiblePokemons: Poke
         onChange={handleChange}
         className={classes.input}
       />
+      {(visiblePokemons.length === 0 && searchTerm) && <div className={classes.noResults}>No Pokémon found</div>}
     </div>
   );
 };
@@ -48,6 +49,11 @@ const useStyles = createUseStyles(
       borderRadius: '4px',
       border: 'none',
       color: '#333',
+    },
+    noResults: {
+      marginTop: '8px',
+      color: '#ff6666',
+      fontWeight: 'bold',
     },
   },
   { name: 'SearchBox' }
